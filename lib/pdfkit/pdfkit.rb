@@ -46,7 +46,7 @@ class PDFKit
   end
 
   def executable
-    default = PDFKit.configuration.wkhtmltopdf
+    default = PDFKit.configuration.wkhtmltopdf.to_s
     return default if default !~ /^\// # its not a path, so nothing we can do
     if File.exist?(default)
       default
